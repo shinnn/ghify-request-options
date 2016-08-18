@@ -6,7 +6,7 @@
   "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
   "scripts": {
     "pretest": "eslint --config @shinnn/node --rule 'complexity: [error, 15]' index.js test.js",
-    "test": "node --throw-deprecation --track-heap-objects test.js | tap-spec",
+    "test": "node --throw-deprecation --track-heap-objects test.js | tap-format-spec",
     "coverage": "node node_modules/.bin/istanbul cover test.js"
   },
   "license": "MIT",
@@ -27,11 +27,11 @@
     "integration"
   ],
   "devDependencies": {
-    "@shinnn/eslint-config-node": "^2.0.0",
-    "eslint": "^2.7.0",
-    "istanbul": "^0.4.2",
-    "request": "^2.70.0",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.5.1"
+    "@shinnn/eslint-config-node": "^3.0.0",
+    "@tap-format/spec": "^0.2.0",
+    "eslint": "^3.3.1",
+    "istanbul": "^0.4.4",
+    "request": "^2.74.0",
+    "tape": "^4.6.0"
   }
 }
