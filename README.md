@@ -3,7 +3,7 @@
 [![NPM version](https://img.shields.io/npm/v/ghify-request-options.svg)](https://www.npmjs.com/package/ghify-request-options)
 [![Build Status](https://travis-ci.org/shinnn/ghify-request-options.svg?branch=master)](https://travis-ci.org/shinnn/ghify-request-options)
 [![Coverage Status](https://img.shields.io/coveralls/shinnn/ghify-request-options.svg)](https://coveralls.io/r/shinnn/ghify-request-options)
-[![devDependency Status](https://david-dm.org/shinnn/ghify-request-options/dev-status.svg)](https://david-dm.org/shinnn/ghify-request-options#info=devDependencies)
+[![devDependencies Status](https://david-dm.org/shinnn/ghify-request-options/dev-status.svg)](https://david-dm.org/shinnn/ghify-request-options?type=dev)
 
 Create a [Request](https://www.npmjs.com/package/request) option object that helps to interact with the [GitHub API](https://developer.github.com/v3/)
 
@@ -20,7 +20,7 @@ ghifyRequestOptions({method: 'POST'});
      },
      baseUrl: 'https://api.github.com'
    }
-*/ 
+*/
 ```
 
 ## Installation
@@ -54,7 +54,7 @@ ghifyRequestOptions();
      },
      baseUrl: 'https://api.github.com'
    }
-*/ 
+*/
 ```
 
 #### options.token
