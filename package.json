@@ -1,37 +1,46 @@
 {
-  "name": "ghify-request-options",
-  "version": "1.0.0",
-  "description": "Create a Request option object that helps to interact with the GitHub API",
-  "repository": "shinnn/ghify-request",
-  "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
-  "scripts": {
-    "pretest": "eslint --config @shinnn/node --rule 'complexity: [error, 15]' index.js test.js",
-    "test": "node --throw-deprecation --track-heap-objects test.js | tap-format-spec",
-    "coverage": "node node_modules/.bin/istanbul cover test.js"
-  },
-  "license": "MIT",
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "request",
-    "http",
-    "https",
-    "github",
-    "api",
-    "github-api",
-    "option",
-    "options",
-    "default",
-    "defaults",
-    "integration"
-  ],
-  "devDependencies": {
-    "@shinnn/eslint-config-node": "^3.0.0",
-    "@tap-format/spec": "^0.2.0",
-    "eslint": "^3.3.1",
-    "istanbul": "^0.4.4",
-    "request": "^2.74.0",
-    "tape": "^4.6.0"
-  }
+	"name": "ghify-request-options",
+	"version": "1.0.0",
+	"description": "Create a Request option object that helps to interact with the GitHub API",
+	"repository": "shinnn/ghify-request-options",
+	"author": "Shinnosuke Watanabe (https://github.com/shinnn)",
+	"license": "MIT",
+	"scripts": {
+		"pretest": "eslint .",
+		"test": "nyc node test.js"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"request",
+		"http",
+		"https",
+		"github",
+		"api",
+		"github-api",
+		"option",
+		"options",
+		"default",
+		"defaults",
+		"integration"
+	],
+	"devDependencies": {
+		"@shinnn/eslint-config": "^6.8.0",
+		"eslint": "^5.8.0",
+		"nyc": "^13.1.0",
+		"nyc-config-common": "^1.0.1",
+		"request": "^2.88.0",
+		"tape": "^4.9.1"
+	},
+	"eslintConfig": {
+		"extends": "@shinnn",
+		"rules": {
+			"prefer-object-spread": "off",
+			"node/no-deprecated-api": "off"
+		}
+	},
+	"nyc": {
+		"extends": "nyc-config-common"
+	}
 }
