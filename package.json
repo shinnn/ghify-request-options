@@ -34,11 +34,7 @@
 		"tape": "^4.9.1"
 	},
 	"eslintConfig": {
-		"extends": "@shinnn",
-		"rules": {
-			"prefer-object-spread": "off",
-			"node/no-deprecated-api": "off"
-		}
+		"extends": "@shinnn"
 	},
 	"nyc": {
 		"extends": "nyc-config-common"

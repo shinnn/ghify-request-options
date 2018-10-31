@@ -5,17 +5,18 @@ const url = require('url');
 const invalidURIErrMsg = ' `baseUrl` option must be a fully qualified URI string used as the base URL.';
 
 module.exports = function ghifyRequestOptions(options) {
-	options = Object.assign({json: true}, options);
+	options = {json: true, ...options};
 
-	options.headers = Object.assign({
+	options.headers = {
 		accept: 'application/vnd.github.v3+json',
-		'user-agent': 'https://github.com/shinnn/ghify-request-options'
-	}, options.headers);
+		'user-agent': 'https://github.com/shinnn/ghify-request-options',
+		...options.headers
+	};
 
 	if (options.token && typeof options.token !== 'string') {
-		throw new TypeError(`${String(options.token)
-		} is not a string. \`token\` option must be a string of a Github personal access token.` +
-			' https://github.com/settings/tokens/');
+		throw new TypeError(`${
+			options.token
+		} is not a string. \`token\` option must be a string of a Github personal access token. https://github.com/settings/tokens/`);
 	}
 
 	const token = options.token || process.env.GITHUB_TOKEN;
@@ -35,7 +36,7 @@ module.exports = function ghifyRequestOptions(options) {
 			throw new TypeError(`${options.baseUrl} is not a string.${invalidURIErrMsg}`);
 		}
 
-		if (!url.parse(options.baseUrl).protocol) {
+		if (!url.parse(options.baseUrl).protocol) { // eslint-disable-line node/no-deprecated-api
 			throw new TypeError(`${options.baseUrl} is not a URI.${invalidURIErrMsg}`);
 		}
 	}
